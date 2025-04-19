@@ -1,0 +1,140 @@
+/* src/styles/navbar.module.css */
+
+.navbarGlass {
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  padding: 0.8rem 2rem;
+  height: auto;
+  transition: all 0.3s ease;
+  /* Ensure navbar stays above other content */
+  z-index: 50;
+  /* Add a fixed width for better centering */
+  max-width: 95%;
+  width: auto;
+}
+
+/* Hover effect for the navbar */
+.navbarGlass:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.linkItem {
+  padding: 0.8rem 1.5rem;
+  font-size: 1.2rem;
+  color: white;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.linkItem + .linkItem {
+  margin-left: 1.5rem;
+}
+
+/* Active link styling */
+.activeLink {
+  color: white;
+  background-color: #024945;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(2, 73, 69, 0.5);
+}
+
+/* Hover effect for links */
+.navHover:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Ripple effect on click */
+.linkItem::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%);
+  transform-origin: 50% 50%;
+}
+
+.linkItem:active::after {
+  animation: ripple 0.6s ease-out;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(30, 30);
+    opacity: 0;
+  }
+}
+
+/* Icon styling */
+.icon {
+  transition: all 0.3s ease;
+}
+
+.linkItem:hover .icon {
+  transform: scale(1.1);
+}
+
+/* Text styling */
+.linkText {
+  transition: all 0.3s ease;
+}
+
+.linkItem:hover .linkText {
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .linkItem {
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+  }
+
+  .linkItem + .linkItem {
+    margin-left: 0.8rem;
+  }
+
+  .navbarGlass {
+    padding: 0.6rem 1.5rem;
+    /* Adjust positioning for mobile */
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 640px) {
+  .linkText {
+    display: none;
+  }
+
+  .linkItem {
+    padding: 0.8rem;
+  }
+
+  .linkItem + .linkItem {
+    margin-left: 0.5rem;
+  }
+
+  .navbarGlass {
+    /* Further adjustments for very small screens */
+    max-width: 95%;
+    padding: 0.5rem 1rem;
+  }
+}

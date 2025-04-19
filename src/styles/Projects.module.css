@@ -1,0 +1,173 @@
+/* styles/Projects.module.css */
+
+.container {
+  min-height: 100vh;
+  padding: 4rem 1rem 8rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.highlight {
+  color: #12a89c;
+  position: relative;
+}
+
+.subtitle {
+  max-width: 600px;
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.projectGrid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2rem;
+}
+
+.projectCard {
+  background: linear-gradient(
+    145deg,
+    rgba(2, 73, 69, 0.5),
+    rgba(18, 168, 156, 0.2)
+  );
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(18, 168, 156, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.projectCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(18, 168, 156, 0.2);
+  border-color: rgba(18, 168, 156, 0.4);
+  cursor: pointer;
+}
+
+.imageContainer {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.imageOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent, rgba(2, 73, 69, 0.8));
+  z-index: 1;
+}
+
+.projectImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.projectCard:hover .projectImage {
+  transform: scale(1.05);
+}
+
+.projectTitle {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 600;
+  z-index: 2;
+}
+
+.projectContent {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.projectDescription {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+  min-height: 100px;
+}
+
+.techContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.techTag {
+  background-color: rgba(18, 168, 156, 0.2);
+  color: #12a89c;
+  border: 1px solid rgba(18, 168, 156, 0.3);
+  border-radius: 9999px;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.linkContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+.projectLink {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #ffffff;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  background-color: rgba(18, 168, 156, 0.1);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.projectLink:hover {
+  background-color: rgba(18, 168, 156, 0.3);
+  color: #12a89c;
+}
+
+/* Media queries for responsiveness */
+@media (min-width: 768px) {
+  .projectGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .title {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .projectGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .container {
+    padding: 5rem 2rem 8rem 2rem;
+  }
+}

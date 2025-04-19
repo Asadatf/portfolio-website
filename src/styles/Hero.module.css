@@ -1,0 +1,150 @@
+/* src/styles/hero.module.css */
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #131516;
+  font-family: "Lato", sans-serif;
+  padding: 0 25px;
+}
+
+.cardContainer {
+  display: flex;
+  flex-direction: row;
+  background: linear-gradient(to right, #024945, #12a89c);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  width: 650px;
+  height: auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Card hover effect */
+.cardContainer:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.descripcion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.image,
+.descripcion {
+  padding: 30px;
+  text-align: left;
+  color: #ffffff;
+}
+
+.descripcion h1 {
+  font-weight: 400;
+  transition: transform 0.3s ease;
+}
+
+/* Name hover effect */
+.cardContainer:hover .descripcion h1 {
+  transform: scale(1.05);
+}
+
+.descripcion h2 {
+  line-height: 2;
+  font-weight: 500;
+  font-size: medium;
+  min-height: 2rem; /* For typing animation stability */
+}
+
+.descripcion p {
+  font-weight: 300;
+  font-size: 17px;
+}
+
+.descripcion .icons {
+  margin-top: 30px;
+}
+
+.descripcion .icons a {
+  display: inline-block;
+  margin: 0 30px 0 30px;
+  color: #ffffff;
+  font-size: 30px;
+  transition: 0.3s;
+}
+
+a:hover {
+  transform: translateY(-3px) scale(1.05);
+}
+
+.hoverText {
+  position: relative;
+  color: white;
+  font-size: 1.5rem;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.hoverText:hover {
+  color: rgba(255, 255, 255, 0.8);
+  transform: scale(1.1);
+}
+
+.tooltipText {
+  visibility: hidden;
+  width: 80px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  text-align: center;
+  border-radius: 4px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 0.875rem;
+}
+
+.hoverText:hover .tooltipText {
+  visibility: visible;
+  opacity: 1;
+}
+
+.image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image img {
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  text-align: center;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Profile image hover effect */
+.cardContainer:hover .image img {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 768px) {
+  .cardContainer {
+    flex-direction: column-reverse;
+  }
+
+  .image {
+    width: 100%;
+    height: 16rem;
+  }
+}

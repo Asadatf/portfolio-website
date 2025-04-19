@@ -1,0 +1,212 @@
+/* src/styles/Resume.module.css */
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background: linear-gradient(
+    to bottom,
+    #024945 0%,
+    #05625d 25%,
+    #089085 50%,
+    #0ea697 75%,
+    #12a89c 100%
+  );
+  /* Add padding to avoid overlap with navbar */
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.resumeContainer {
+  width: 100%;
+  height: calc(100vh - 80px); /* Adjust height to account for navbar */
+  background: linear-gradient(
+    to bottom,
+    #024945 0%,
+    #05625d 25%,
+    #089085 50%,
+    #0ea697 75%,
+    #12a89c 100%
+  );
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.controls {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  gap: 0.5rem;
+  /* Increased z-index */
+  z-index: 40;
+  position: relative;
+}
+
+.controlButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.6rem 1rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  color: white;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.controlButton:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.shareWrapper {
+  position: relative;
+}
+
+.shareMenu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 0.5rem;
+  background-color: #01322f;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 0.5rem;
+  z-index: 60; /* Higher z-index to appear above navbar */
+  width: 150px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.shareOption {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 0.6rem;
+  background-color: transparent;
+  border: none;
+  color: white;
+  text-align: left;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.shareOption:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.resumeContent {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 0 2rem 0;
+  background: linear-gradient(
+    to bottom,
+    #024945 0%,
+    #05625d 25%,
+    #089085 50%,
+    #0ea697 75%,
+    #12a89c 100%
+  );
+}
+
+.pdfWrapper {
+  width: 95%;
+  max-width: 850px;
+  height: auto;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.resumeFrame {
+  width: 100%;
+  height: calc(100vh - 200px); /* Reduced height to avoid navbar overlap */
+  border: none;
+  display: block;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .resumeContainer {
+    height: calc(100vh - 90px);
+  }
+
+  .controls {
+    padding: 0.8rem;
+  }
+
+  .controlButton {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.8rem;
+  }
+
+  .resumeContent {
+    padding: 0 0 1.5rem 0;
+  }
+
+  .pdfWrapper {
+    width: 95%;
+  }
+
+  .resumeFrame {
+    height: calc(100vh - 170px);
+  }
+}
+
+/* Extra handling for very small screens */
+@media (max-width: 480px) {
+  .container {
+    padding-bottom: 90px; /* Larger padding for bottom navbar on mobile */
+  }
+
+  .controls {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    padding: 0.5rem;
+  }
+
+  .controlButton {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.75rem;
+  }
+
+  .shareMenu {
+    right: 0;
+  }
+
+  .pdfWrapper {
+    width: 98%;
+  }
+
+  .resumeFrame {
+    height: calc(100vh - 160px);
+  }
+}
