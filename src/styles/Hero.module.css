@@ -77,7 +77,8 @@
   transition: 0.3s;
 }
 
-a:hover {
+/* Fixed - scoped to the parent class */
+.descripcion .icons a:hover {
   transform: translateY(-3px) scale(1.05);
 }
 
