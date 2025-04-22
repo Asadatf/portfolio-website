@@ -1,0 +1,63 @@
+.inputForm {
+  width: 100%;
+}
+
+.inputContainer {
+  display: flex;
+  align-items: center;
+  background-color: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(20, 184, 166, 0.3);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+  position: relative;
+}
+
+.inputContainer:focus-within {
+  border-color: rgba(20, 184, 166, 0.6);
+}
+
+.textInput {
+  width: 100%;
+  padding: 10px 16px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 14px;
+}
+
+.textInput::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.sendButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #14b8a6;
+  border: none;
+  border-radius: 8px;
+  width: 36px;
+  height: 36px;
+  margin-right: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.sendButton:hover {
+  background-color: #0d9488;
+}
+
+.sendButton:disabled {
+  background-color: rgba(20, 184, 166, 0.3);
+  cursor: not-allowed;
+}
+
+.sendButtonIcon {
+  opacity: 1;
+}
+
+.sendButtonIcon.disabled {
+  opacity: 0.5;
+}

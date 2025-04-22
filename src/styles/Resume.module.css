@@ -8,14 +8,7 @@
   width: 100%;
   padding: 0;
   margin: 0;
-  background: linear-gradient(
-    to bottom,
-    #024945 0%,
-    #05625d 25%,
-    #089085 50%,
-    #0ea697 75%,
-    #12a89c 100%
-  );
+
   /* Add padding to avoid overlap with navbar */
   padding-top: 80px;
   padding-bottom: 80px;

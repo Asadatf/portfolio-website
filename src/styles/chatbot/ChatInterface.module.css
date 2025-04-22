@@ -1,0 +1,66 @@
+.chatContainer {
+  position: fixed;
+  bottom: 5rem;
+  right: 2rem;
+  width: 350px;
+  height: 500px;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  background-color: rgba(10, 15, 20, 0.8);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(20, 184, 166, 0.3);
+  box-shadow: 0 0 20px rgba(20, 184, 166, 0.2);
+}
+
+.chatHeader {
+  padding: 12px 16px;
+  background: linear-gradient(to right, #024945, #14b8a6);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.chatTitle {
+  color: white;
+  font-weight: 600;
+  font-size: 18px;
+  margin: 0;
+}
+
+.closeButton {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: background-color 0.2s ease;
+}
+
+.closeButton:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.messagesContainer {
+  flex-grow: 1;
+  overflow-y: auto;
+  background: rgba(10, 15, 20, 0.5);
+  padding: 12px 16px;
+}
+
+.loaderContainer {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 8px;
+}
+
+.inputContainer {
+  padding: 12px 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
